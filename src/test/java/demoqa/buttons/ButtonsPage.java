@@ -16,7 +16,7 @@ public class ButtonsPage {
     private SelenideElement dynamicClickMessage = $("#dynamicClickMessage");
 
     public ButtonsPage() {
-        Selenide.open("https://demoqa.com/buttons");
+        Selenide.open("buttons");
     }
 
     public SelenideElement getDoubleClickMessage() {

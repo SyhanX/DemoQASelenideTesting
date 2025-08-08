@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 abstract public class BaseSelenideTest {
     public static void setUpBrowser() {
+        Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = true;

@@ -14,7 +14,7 @@ public class RadioButtonPage {
     private final SelenideElement selectedRadioText = $x("//p[@class='mt-3']//span[@class='text-success']");
 
     public RadioButtonPage() {
-        Selenide.open("https://demoqa.com/radio-button");
+        Selenide.open("radio-button");
     }
 
     public SelenideElement getSelectedRadioText() {

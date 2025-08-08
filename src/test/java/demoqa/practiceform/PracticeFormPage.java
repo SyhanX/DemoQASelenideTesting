@@ -25,7 +25,7 @@ public class PracticeFormPage {
     private final SelenideElement dateOfBirthTableRow = $x("//table//tbody//tr[5]");
 
     public PracticeFormPage() {
-        Selenide.open("https://demoqa.com/automation-practice-form");
+        Selenide.open("automation-practice-form");
     }
 
     public SelenideElement getFirstNameForm() {

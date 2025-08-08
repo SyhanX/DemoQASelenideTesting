@@ -20,7 +20,7 @@ public class TextBoxPage {
     }
 
     public TextBoxPage() {
-        Selenide.open("https://demoqa.com/text-box");
+        Selenide.open("text-box");
     }
 
     public void fillNameForm(String name) {
