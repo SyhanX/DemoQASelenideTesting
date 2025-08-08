@@ -6,6 +6,12 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 abstract public class BaseSelenideTest {
     public static void setUpBrowser() {
@@ -26,6 +32,13 @@ abstract public class BaseSelenideTest {
     public static void init() {
         setUpBrowser();
         setUpAllureReports();
+    }
+
+    @BeforeEach
+    public void setUp() throws IOException {
+        ChromeOptions options = new ChromeOptions();
+        Path tempProfile = Files.createTempDirectory("chrome-profile");
+        options.addArguments("--user-data-dir=" + tempProfile.toAbsolutePath());
     }
 
     @AfterEach
