@@ -15,6 +15,10 @@ import java.nio.file.Path;
 
 abstract public class BaseSelenideTest {
     public static void setUpBrowser() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
