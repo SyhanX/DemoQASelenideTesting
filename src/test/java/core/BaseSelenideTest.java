@@ -16,13 +16,16 @@ import java.nio.file.Path;
 abstract public class BaseSelenideTest {
     public static void setUpBrowser() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless=new");
+        options.addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
+
         Configuration.baseUrl = "https://demoqa.com/";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = true;
+        Configuration.browserCapabilities = options;
     }
 
     public static void setUpAllureReports() {
